@@ -10,7 +10,7 @@ chave = chave.n_chave()
 
 
 
-cont = 0
+contador = 0
 
 @client.event
 async def on_ready():
@@ -39,7 +39,7 @@ async def on_message(text,):
         global hora
         
         while contador <= contador:
-	          contador = contador + 1
+	      contador = contador + 1
             for cont in range (1):
                 if text.content.lower().startswith('-'):
                     time = 'Nome do Time '+text.content
