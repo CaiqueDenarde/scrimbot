@@ -10,7 +10,7 @@ chave = chave.n_chave()
 
 
 
-
+cont = 0
 
 @client.event
 async def on_ready():
@@ -37,28 +37,29 @@ async def on_message(text,):
         global time
         global data
         global hora
+        
+        while cont == 0:
+            for cont in range (1):
+                if text.content.lower().startswith('-'):
+                    time = 'Nome do Time '+text.content
+                    print(time)
+                    # await client.send_message(text.channel, time)
 
-        for cont in range (1):
-            if text.content.lower().startswith('-'):
-                time = 'Nome do Time '+text.content
-                print(time)
-                # await client.send_message(text.channel, time)
+                elif text.content.lower().startswith('.'):
+                    data = 'Data '+text.content
+                    # await client.send_message(text.channel, data)
+                    print(data)
+                elif text.content.lower().startswith(':'):
+                    hora = 'Hora '+text.content
+                    # await client.send_message(text.channel, hora)
+                    print(hora)
+                if text.content.lower().startswith("confscrim"):
+                    info = discord.Embed(
+                        title='Scrim Confirmada!\n',
+                        description='{}\n {}\n {}\n'.format(time,data,hora)
 
-            elif text.content.lower().startswith('.'):
-                data = 'Data '+text.content
-                # await client.send_message(text.channel, data)
-                print(data)
-            elif text.content.lower().startswith(':'):
-                hora = 'Hora '+text.content
-                # await client.send_message(text.channel, hora)
-                print(hora)
-            if text.content.lower().startswith("confscrim"):
-                info = discord.Embed(
-                    title='Scrim Confirmada!\n',
-                    description='{}\n {}\n {}\n'.format(time,data,hora)
-
-                )
-                botmsg = await client.send_message(text.channel, embed=info)
+                    )
+                    botmsg = await client.send_message(text.channel, embed=info)
 
 
                
