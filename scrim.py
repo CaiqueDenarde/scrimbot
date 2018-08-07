@@ -38,7 +38,8 @@ async def on_message(text,):
         global data
         global hora
         
-        while cont == 0:
+        while contador <= contador:
+	          contador = contador + 1
             for cont in range (1):
                 if text.content.lower().startswith('-'):
                     time = 'Nome do Time '+text.content
