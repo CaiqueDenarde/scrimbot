@@ -54,7 +54,7 @@ async def on_ready():
                         hora = 'Hora ' + text.content
                         # await client.send_message(text.channel, hora)
                         print(hora)
-        if text.content.lower().startswith("confscrim"):
+         if text.content.lower().startswith("confscrim"):
                         info = discord.Embed(
                             title='Scrim Confirmada!\n',
                             description='{}\n {}\n {}\n'.format(time, data, hora)
