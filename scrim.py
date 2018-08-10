@@ -26,18 +26,19 @@ async def on_ready():
         global hora
         qtd = 1
 
-        if text.content.lower().startswith('addscrim'):
-            info = discord.Embed(
-                title='Informe os dados abaixo!',
-                description=  # '%Qtd Scrim\n'
-                '- Nome do Time\n'
-                '. Data\n'
-                ': Hora',
-            )
-            botmsg = await client.send_message(text.channel, embed=info)
+        
             
         for cont in range(qtd):
             for cont1 in range(1):
+                if text.content.lower().startswith('addscrim'):
+                      info = discord.Embed(
+                          title='Informe os dados abaixo!',
+                          description=  # '%Qtd Scrim\n'
+                                        '- Nome do Time\n'
+                                        '. Data\n'
+                                        ': Hora',
+                      )
+                      botmsg = await client.send_message(text.channel, embed=info)
                 #if text.content.lower().startswith('%'):
                         #time = 'Qtd Scrim ' + text.content
                         #print(time)
