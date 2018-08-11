@@ -30,7 +30,7 @@ async def on_ready():
 
         for cont1 in range (1):
             if text.content.lower().startswith('addscrim') :
-                if text.author.id == '455265787226357761':  # Permissao
+                if text.author.id == '455265787226357760':  # Permissao
                     @client.event
                     async def on_message(text, ):
                         global time
