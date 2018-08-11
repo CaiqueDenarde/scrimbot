@@ -24,13 +24,13 @@ async def on_ready():
                 'Add Time ( - )\n'
                 'Add Data ( . )\n'
                 'Add Hora ( : )\n'
-                '\nUtilize os comandos sem parenteses'
+                '\nUtilize os comandos sem parênteses'
             )
             botmsg = await client.send_message(text.channel, embed=info)
 
         for cont1 in range (1):
             if text.content.lower().startswith('addscrim') :
-                if text.author.id == '455265787226357760':  # Permissao
+                if text.author.id == '455265787226357761':  # Permissao
                     @client.event
                     async def on_message(text, ):
                         global time
