@@ -17,7 +17,7 @@ async def on_ready():
 
     @client.event
     async def on_message(text, ):
-        
+
 
         for cont1 in range (1):
             if text.content.lower().startswith('helpbot'):
