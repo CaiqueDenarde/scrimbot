@@ -15,53 +15,54 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
 
-
-
-
     @client.event
     async def on_message(text, ):
+        if text.content.lower().startswith('helpbot'):
+            info = discord.Embed(
+                title='Lista de Comandos',
+                description=
+                'Add Time ( - )\n'
+                'Add Data ( . )\n'
+                'Add Hora ( : )\n'
+                '\nUtilize os comandos sem parenteses'
+            )
+            botmsg = await client.send_message(text.channel, embed=info)
 
-        global time
-        global data
-        global hora
-        qtd = 1
+        for cont1 in range (1):
+            if text.content.lower().startswith('addscrim') :
+                if text.author.id == '455265787226357760':  # Permissao
+                    @client.event
+                    async def on_message(text, ):
+                        global time
+                        global data
+                        global hora
 
-        
-            
-        for cont in range(qtd):
-            for cont1 in range(1):
-                if text.content.lower().startswith('addscrim'):
-                      info = discord.Embed(
-                          title='Informe os dados abaixo!',
-                          description=  # '%Qtd Scrim\n'
-                                        '- Nome do Time\n'
-                                        '. Data\n'
-                                        ': Hora',
-                      )
-                      botmsg = await client.send_message(text.channel, embed=info)
-                #if text.content.lower().startswith('%'):
-                        #time = 'Qtd Scrim ' + text.content
-                        #print(time)
-                if text.content.lower().startswith('-'):
-                        time = 'Nome do Time ' + text.content
-                        print(time)
-                        # await client.send_message(text.channel, time)
+                        if text.content.lower().startswith('-'):
+                                time = 'Nome do Time ' + text.content
+                                print(time)
+                                # await client.send_message(text.channel, time)
 
-                elif text.content.lower().startswith('.'):
-                        data = 'Data ' + text.content
-                        # await client.send_message(text.channel, data)
-                        print(data)
-                elif text.content.lower().startswith(':'):
-                        hora = 'Hora ' + text.content
-                        # await client.send_message(text.channel, hora)
-                        print(hora)
-                if text.content.lower().startswith("confscrim"):
-                        info = discord.Embed(
-                            title='Scrim Confirmada!\n',
-                            description='{}\n {}\n {}\n'.format(time, data, hora)
+                        if text.content.lower().startswith('.'):
+                                data = 'Data ' + text.content
+                                # await client.send_message(text.channel, data)
+                                print(data)
+                        if text.content.lower().startswith(':'):
+                                hora = 'Hora ' + text.content
+                                # await client.send_message(text.channel, hora)
+                                print(hora)
 
-                        )
-                        botmsg = await client.send_message(text.channel, embed=info)
+                        if text.content.lower().startswith('confscrim'):
+                            info = discord.Embed(
+                                title='Scrim Confirmada!\n',
+                                description='{}\n {}\n {}\n'.format(time, data, hora)
+
+                            )
+                            botmsg = await client.send_message(text.channel, embed=info)
+
+
+                else:
+                    await client.send_message(text.channel, 'Você não tem permissão!')
+
 
 
 client.run(chave)
