@@ -17,18 +17,21 @@ async def on_ready():
 
     @client.event
     async def on_message(text, ):
-        if text.content.lower().startswith('helpbot'):
-            info = discord.Embed(
-                title='Lista de Comandos',
-                description=
-                'Add Time ( - )\n'
-                'Add Data ( . )\n'
-                'Add Hora ( : )\n'
-                '\nUtilize os comandos sem parênteses'
-            )
-            botmsg = await client.send_message(text.channel, embed=info)
+        
 
         for cont1 in range (1):
+            if text.content.lower().startswith('helpbot'):
+                info = discord.Embed(
+                    title='Lista de Comandos',
+                    description=
+                    'Gravar dados (addscrim)\n'
+                    'Add Time ( - )\n'
+                    'Add Data ( . )\n'
+                    'Add Hora ( : )\n'
+                    'Confirmar dados (confscrim)\n'
+                    '\nUtilize os comandos sem parênteses'
+                )
+                botmsg = await client.send_message(text.channel, embed=info)
             if text.content.lower().startswith('addscrim') :
                 if text.author.id == '455265787226357760':  # Permissao
                     @client.event
