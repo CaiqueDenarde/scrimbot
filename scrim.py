@@ -33,7 +33,7 @@ async def on_ready():
                 )
                 botmsg = await client.send_message(text.channel, embed=info)
             if text.content.lower().startswith('addscrim') :
-                if text.author.id == '455265787226357760':  # Permissao
+                if text.author.id == '455265787226357760','425410257095884800':  # Permissao
                     @client.event
                     async def on_message(text, ):
                         global time
