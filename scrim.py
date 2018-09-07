@@ -8,7 +8,7 @@ import discord.message
 client = discord.Client()
 chave = chave.n_chave()
 
-qtd = 1
+
 
 @client.event
 async def on_ready():
@@ -34,7 +34,7 @@ async def on_ready():
                     botmsg = await client.send_message(text.channel, embed=info)
 
 
-            for cont2 in range (qtd):
+            for cont2 in range (1):
 
                 if text.content.lower().startswith('addscrim') :
                     if text.author.id == '455265787226357760':  # Permissao
@@ -59,7 +59,7 @@ async def on_ready():
                                     hora = 'Hora ' + text.content
                                     # await client.send_message(text.channel, hora)
                                     print(hora)
-                            qtd= 0
+                            
 
 
 
