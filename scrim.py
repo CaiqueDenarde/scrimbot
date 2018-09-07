@@ -8,7 +8,7 @@ import discord.message
 client = discord.Client()
 chave = chave.n_chave()
 
-qtd = 1
+
 
 @client.event
 async def on_ready():
@@ -20,7 +20,7 @@ async def on_ready():
     async def on_message(text, ):
 
 
-            for cont1 in range (qtd):
+            for cont1 in range (1):
 
                 if text.content.lower().startswith('addscrim') :
                     info = discord.Embed(
