@@ -24,42 +24,42 @@ async def on_ready():
 
                 if text.content.lower().startswith('addscrim') :
                     print('Iniciando Gravação...')
-                    if text.author.id == '455265787226357760':  # Permissao
+                    #if text.author.id == '455265787226357760':  # Permissao
 
-                        @client.event
-                        async def on_message(text, ):
-                            global time
-                            global data
-                            global hora
-                            global info
+                    @client.event
+                    async def on_message(text, ):
+                        global time
+                        global data
+                        global hora
+                        global info
 
-                            if text.content.lower().startswith('-'):
-                                    time = 'Nome do Time ' + text.content
-                                    print(time)
-                                    # await client.send_message(text.channel, time)
+                        if text.content.lower().startswith('-'):
+                                time = 'Nome do Time ' + text.content
+                                print(time)
+                                # await client.send_message(text.channel, time)
 
-                            elif text.content.lower().startswith('.'):
-                                    data = 'Data ' + text.content
-                                    # await client.send_message(text.channel, data)
-                                    print(data)
-                            elif text.content.lower().startswith(':'):
-                                    hora = 'Hora ' + text.content
-                                    # await client.send_message(text.channel, hora)
-                                    print(hora)
+                        elif text.content.lower().startswith('.'):
+                                data = 'Data ' + text.content
+                                # await client.send_message(text.channel, data)
+                                print(data)
+                        elif text.content.lower().startswith(':'):
+                                hora = 'Hora ' + text.content
+                                # await client.send_message(text.channel, hora)
+                                print(hora)
+
+    
+                        if text.content.lower().startswith('confscrim'):
+                            info = discord.Embed(
+                                title='Scrim Confirmada!\n',
+                                description='{}\n {}\n {}\n'.format(time, data, hora)
+
+                            )
+                            botmsg = await client.send_message(text.channel, embed=info)
+                            print(time, data, hora)
 
 
-                            if text.content.lower().startswith('confscrim'):
-                                info = discord.Embed(
-                                    title='Scrim Confirmada!\n',
-                                    description='{}\n {}\n {}\n'.format(time, data, hora)
-
-                                )
-                                botmsg = await client.send_message(text.channel, embed=info)
-                                print(time, data, hora)
-
-
-                    else:
-                        await client.send_message(text.channel, 'Você não tem permissão!')
+            #else:
+                #await client.send_message(text.channel, 'Você não tem permissão!')
 
             for cont2 in range(1):
 
@@ -79,4 +79,3 @@ async def on_ready():
 
 
 client.run(chave)
-
